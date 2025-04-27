@@ -9,6 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import type { ReactNode } from "react";
+import { Toaster } from "@workspace/user-interface/components/sonner";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -23,7 +25,9 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+type LayoutProps = Readonly<{ children: ReactNode }>;
+
+export function Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <head>
@@ -36,6 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Toaster /> 
       </body>
     </html>
   );
@@ -45,7 +50,9 @@ export default function App() {
   return <Outlet />;
 }
 
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+type ErrorBoundaryProps = Readonly<Route.ErrorBoundaryProps>;
+
+export function ErrorBoundary({ error }: ErrorBoundaryProps) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
   let stack: string | undefined;
