@@ -34,7 +34,7 @@ export class AiService {
             content: [
               {
                 type: "text",
-                text: `For the following meal: "${input}", provide only the following data in this exact format: 
+                text: `For the following meal: "${input}", provide only the following data in this exact format:
                 { "calories": number, "proteins": number, "carbohydrates": number, "fats": number }
                 Do not modify the output in any way. Consistency is key, and no other data should be included.`,
               },
@@ -50,7 +50,9 @@ export class AiService {
         throw new Error("Empty AI response");
       }
 
-      return result.text;
+      const cleanResponse = result.text.replaceAll("```", "").replaceAll("json", "");
+
+      return cleanResponse;
     } catch (error) {
       console.error("Error when calling AI:", error);
       throw new Error("Error when calling AI");

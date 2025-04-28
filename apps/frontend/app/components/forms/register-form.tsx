@@ -7,15 +7,35 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Button } from "@workspace/user-interface/components/button";
 import { Input } from "@workspace/user-interface/components/input";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@workspace/user-interface/components/card";
-import { Alert, AlertDescription } from "@workspace/user-interface/components/alert";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@workspace/user-interface/components/form";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@workspace/user-interface/components/card";
+import {
+  Alert,
+  AlertDescription,
+} from "@workspace/user-interface/components/alert";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@workspace/user-interface/components/form";
+import { useAuthStore } from "~/lib/store";
 
 const registerSchema = z
   .object({
     name: z.string().min(2, { message: "Name must be at least 2 characters" }),
     email: z.string().email({ message: "Please enter a valid email address" }),
-    password: z.string().min(6, { message: "Password must be at least 6 characters" }),
+    password: z
+      .string()
+      .min(6, { message: "Password must be at least 6 characters" }),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
@@ -30,6 +50,8 @@ export function RegisterForm() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const { isAuthenticated, register } = useAuthStore();
+
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -40,11 +62,16 @@ export function RegisterForm() {
     },
   });
 
+  if (isAuthenticated) {
+    navigate("/dashboard");
+  }
+
   const onSubmit = async (values: RegisterFormValues) => {
     setLoading(true);
     setError("");
 
     try {
+      await register(values.name, values.email, values.password);
       navigate("/dashboard");
     } catch (err) {
       console.error(err);
@@ -58,7 +85,9 @@ export function RegisterForm() {
     <Card>
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
-        <CardDescription>Enter your information to create a CalorieAI account</CardDescription>
+        <CardDescription>
+          Enter your information to create a CalorieAI account
+        </CardDescription>
       </CardHeader>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>

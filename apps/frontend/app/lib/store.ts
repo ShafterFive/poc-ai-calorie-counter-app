@@ -39,14 +39,29 @@ export const useAuthStore = create<AuthState>()(
             isLoading: false,
           });
         } catch (error: unknown) {
-          set({ isLoading: false, error: (error as any).response.data.message });
+          set({
+            isLoading: false,
+            error: (error as any).response.data.message,
+          });
           throw error;
         }
       },
       register: async (name, email, password) => {
         try {
           set({ isLoading: true, error: null });
-          const response = await api.post("auth/register", { name, email, password });
+          const response = await api.post("auth/register", {
+            name,
+            email,
+            password,
+          });
+
+          if (response.status !== 200) {
+            set({
+              isLoading: false,
+              error: response.data.message,
+            });
+            throw new Error(response.data.message);
+          }
 
           set({
             user: response.data.user,
@@ -54,7 +69,10 @@ export const useAuthStore = create<AuthState>()(
             isLoading: false,
           });
         } catch (error: unknown) {
-          set({ isLoading: false, error: (error as any).response.data.message });
+          set({
+            isLoading: false,
+            error: (error as any).response.data.message,
+          });
           throw error;
         }
       },
@@ -69,16 +87,27 @@ export const useAuthStore = create<AuthState>()(
             isLoading: false,
           });
         } catch (error: unknown) {
-          set({ isLoading: false, error: (error as any).response.data.message });
+          set({
+            isLoading: false,
+            error: (error as any).response.data.message,
+          });
           throw error;
         }
       },
       checkAuth: async () => {
         try {
           set({ isLoading: true, error: null });
+
           const response = await api.get("auth/me");
 
-          console.log(response);
+          if (response.status === 401) {
+            set({
+              user: null,
+              isAuthenticated: false,
+              isLoading: false,
+            });
+            return false;
+          }
 
           set({
             user: response.data.user,
@@ -88,7 +117,10 @@ export const useAuthStore = create<AuthState>()(
 
           return true;
         } catch (error: unknown) {
-          set({ isLoading: false, error: (error as any).response.data.message });
+          set({
+            isLoading: false,
+            error: (error as any).response.data.message,
+          });
           return false;
         }
       },
@@ -97,6 +129,6 @@ export const useAuthStore = create<AuthState>()(
     {
       name: "auth-storage",
       partialize: (state) => ({ user: state.user }),
-    }
-  )
+    },
+  ),
 );
